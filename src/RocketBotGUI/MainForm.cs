@@ -196,8 +196,8 @@ namespace PokemonGo.RocketAPI.Window
                                 {
                                     ColoredConsoleWrite(Color.Red, $"哎呀好像沒有權限！可能沒辦法自動更新！\n如果無法自動更新，請「以管理員身分」啟動本程式！");
                                 }
-                                ColoredConsoleWrite(Color.Gold, $"有新版本可以更新！目前版本：{GetExecutingAssembly().GetName().Version}\n　自動更新頁　=>　HTTP://HKDC.idv.la/HKDC/PokeRocket　<=　點擊「更新到最新版本」即可自動更新");
-                                System.Diagnostics.Process.Start("HTTP://HKDC.idv.la/HKDC/PokeRocket");
+                                ColoredConsoleWrite(Color.Gold, $"有新版本可以更新！目前版本：{GetExecutingAssembly().GetName().Version}\n　自動更新頁　=>　HTTP://HKDC.idv.la/HKDC/PokeRocket/#Update:{GetExecutingAssembly().GetName().Version}　<=　點擊「更新到最新版本」即可自動更新");
+                                System.Diagnostics.Process.Start($"HTTP://HKDC.idv.la/HKDC/PokeRocket/#Update:{GetExecutingAssembly().GetName().Version}");
                                 Registry.SetValue("HKEY_CURRENT_USER\\SOFTWARE\\Hen-Ku.DC\\PokémonGO Rocket", "AutoUpdate", false);
                                 timer1.Enabled = true;
                                 break;
@@ -241,17 +241,19 @@ namespace PokemonGo.RocketAPI.Window
         //                "https://raw.githubusercontent.com/TheUnnameOrganization/RocketBot/Beta-Build/src/RocketBotGUI/Properties/AssemblyInfo.cs");
         //}
 
-        public static void ColoredConsoleWrite(Color color, string text)
+        public static void ColoredConsoleWrite(Color color, string text, string shield = "")
         {
             if (Instance.InvokeRequired)
             {
-                Instance.Invoke(new Action<Color, string>(ColoredConsoleWrite), color, text);
+                Instance.Invoke(new Action<Color, string, string>(ColoredConsoleWrite), color, text, shield);
                 return;
             }
 
             Instance.logTextBox.Select(Instance.logTextBox.Text.Length, 1); // Reset cursor to last
 
-            var textToAppend = "【" + DateTime.Now.ToString("HH:mm:ss") + "】" + text + "\r\n";
+            string PrintToConsole = text;
+            if (shield != "") PrintToConsole = shield;
+            var textToAppend = "【" + DateTime.Now.ToString("HH:mm:ss") + "】" + PrintToConsole + "\r\n";
             Instance.logTextBox.SelectionColor = color;
             Instance.logTextBox.AppendText(textToAppend);
 
@@ -265,6 +267,13 @@ namespace PokemonGo.RocketAPI.Window
                     File.AppendAllText(dir + @"\" + DateTime.Today.ToString("yyyyMMdd") + ".htm", "<meta HTTP-EQUIV=\"Content-Type\" CONTENT=\"text/html; charset=utf-8\"><Body BGColor=#0>\n");
                 File.AppendAllText(dir + @"\" + DateTime.Today.ToString("yyyyMMdd") + ".htm",
                     $"<Font Color=#{Convert.ToString(color.R, 16).PadLeft(2, '0')}{Convert.ToString(color.G, 16).PadLeft(2, '0')}{Convert.ToString(color.B, 16).PadLeft(2, '0')}><Pre>【{DateTime.Now.ToString("HH:mm:ss")}({_getSessionRuntimeInTimeFormat()})】{text}\r\n</Pre></Font>");
+                if (color == Color.Red)
+                {
+                    if (!System.IO.File.Exists(dir + @"\" + DateTime.Today.ToString("yyyyMMdd") + "(Error).htm"))
+                        File.AppendAllText(dir + @"\" + DateTime.Today.ToString("yyyyMMdd") + "(Error).htm", "<meta HTTP-EQUIV=\"Content-Type\" CONTENT=\"text/html; charset=utf-8\"><Body BGColor=#0>\n");
+                    File.AppendAllText(dir + @"\" + DateTime.Today.ToString("yyyyMMdd") + "(Error).htm",
+                        $"<Font Color=#{Convert.ToString(color.R, 16).PadLeft(2, '0')}{Convert.ToString(color.G, 16).PadLeft(2, '0')}{Convert.ToString(color.B, 16).PadLeft(2, '0')}><Pre>【{DateTime.Now.ToString("HH:mm:ss")}({_getSessionRuntimeInTimeFormat()})】{text}\r\n</Pre></Font>");
+                }
             }
         }
 
@@ -583,7 +592,7 @@ namespace PokemonGo.RocketAPI.Window
             }
             catch (Exception ex)
             {
-                ColoredConsoleWrite(Color.Red, ex.ToString());
+                ColoredConsoleWrite(Color.Red, ex.StackTrace, "發生不明錯誤，詳細資訊請檢閱Log記錄檔");
                 //if (!_stopping) Execute();
                 RestartCounte++;
             }
@@ -887,7 +896,7 @@ namespace PokemonGo.RocketAPI.Window
         {
             var mapObjects = await client.Map.GetMapObjects();
 
-            var currentLoc = new LatLong(_client.CurrentLatitude, _client.CurrentLongitude);
+            var currentLoc = new LatLong(RangeCenter.Lat, RangeCenter.Lng);
             var rawPokeStops =
                 mapObjects.Item1.MapCells.SelectMany(i => i.Forts)
                     .Where(
@@ -1527,6 +1536,7 @@ namespace PokemonGo.RocketAPI.Window
             settingsForm.ShowDialog();
         }
 
+        PointLatLng RangeCenter;
         private void startStopBotToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (!_botStarted)
@@ -1537,6 +1547,8 @@ namespace PokemonGo.RocketAPI.Window
                 _stopping = false;
                 _botStarted = true;
                 startStopBotToolStripMenuItem.Text = "■ 關閉機器人";
+                RangeCenter.Lat = ClientSettings.DefaultLatitude;
+                RangeCenter.Lng = ClientSettings.DefaultLongitude;
                 Task.Run(async () =>
                 {
                     //CheckVersion();
@@ -1557,7 +1569,7 @@ namespace PokemonGo.RocketAPI.Window
                         }
                         catch (Exception ex)
                         {
-                            ColoredConsoleWrite(Color.Red, $"發生未知的錯誤：{ex}");
+                            ColoredConsoleWrite(Color.Red, ex.StackTrace, "發生不明錯誤，詳細資訊請檢閱Log記錄檔");
                         }
                     }
                 });
@@ -1868,11 +1880,11 @@ namespace PokemonGo.RocketAPI.Window
             }
             catch (AccessTokenExpiredException ex)
             {
-                ColoredConsoleWrite(Color.Red, ex.Message);
+                ColoredConsoleWrite(Color.Red, ex.Message, "發生不明錯誤，詳細資訊請檢閱Log記錄檔");
             }
             catch (Exception ex)
             {
-                ColoredConsoleWrite(Color.Red, ex.ToString());
+                ColoredConsoleWrite(Color.Red, ex.StackTrace, "發生不明錯誤，詳細資訊請檢閱Log記錄檔");
 
                 //_pokestopsOverlay.Routes.Clear();
                 //_pokestopsOverlay.Markers.Clear();
@@ -1997,7 +2009,7 @@ namespace PokemonGo.RocketAPI.Window
             }
             catch (Exception ex)
             {
-                ColoredConsoleWrite(Color.Red, ex.ToString());
+                ColoredConsoleWrite(Color.Red, ex.StackTrace, "發生不明錯誤，詳細資訊請檢閱Log記錄檔");
                 _client2 = null;
                 await ReloadPokemonList();
             }
