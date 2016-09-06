@@ -147,7 +147,6 @@ namespace PokemonGo.RocketAPI.Window
             this.panel1 = new System.Windows.Forms.Panel();
             this.label20 = new System.Windows.Forms.Label();
             this.RandomDeviceBtn = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.tabProfile = new System.Windows.Forms.TabPage();
@@ -161,6 +160,10 @@ namespace PokemonGo.RocketAPI.Window
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.textBox1 = new System.Windows.Forms.RichTextBox();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar)).BeginInit();
             this.panel2.SuspendLayout();
             this.tabControl.SuspendLayout();
@@ -207,6 +210,9 @@ namespace PokemonGo.RocketAPI.Window
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // authTypeLabel
@@ -257,9 +263,10 @@ namespace PokemonGo.RocketAPI.Window
             // 
             // latLabel
             // 
+            this.latLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.latLabel.AutoSize = true;
             this.latLabel.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.latLabel.Location = new System.Drawing.Point(6, 7);
+            this.latLabel.Location = new System.Drawing.Point(3, 10);
             this.latLabel.Name = "latLabel";
             this.latLabel.Size = new System.Drawing.Size(68, 16);
             this.latLabel.TabIndex = 4;
@@ -324,23 +331,29 @@ namespace PokemonGo.RocketAPI.Window
             // 
             // latitudeText
             // 
+            this.latitudeText.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.latitudeText.Font = new System.Drawing.Font("Segoe Script", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.latitudeText.Location = new System.Drawing.Point(80, 3);
+            this.latitudeText.Location = new System.Drawing.Point(78, 4);
             this.latitudeText.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.latitudeText.Name = "latitudeText";
             this.latitudeText.ReadOnly = true;
-            this.latitudeText.Size = new System.Drawing.Size(120, 27);
+            this.latitudeText.Size = new System.Drawing.Size(409, 27);
             this.latitudeText.TabIndex = 13;
             this.latitudeText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // longitudeText
             // 
+            this.longitudeText.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.longitudeText.Font = new System.Drawing.Font("Segoe Script", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.longitudeText.Location = new System.Drawing.Point(206, 3);
+            this.longitudeText.Location = new System.Drawing.Point(493, 4);
             this.longitudeText.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.longitudeText.Name = "longitudeText";
             this.longitudeText.ReadOnly = true;
-            this.longitudeText.Size = new System.Drawing.Size(120, 27);
+            this.longitudeText.Size = new System.Drawing.Size(409, 27);
             this.longitudeText.TabIndex = 14;
             this.longitudeText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -401,7 +414,7 @@ namespace PokemonGo.RocketAPI.Window
             this.saveBtn.Location = new System.Drawing.Point(4, 1);
             this.saveBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.saveBtn.Name = "saveBtn";
-            this.saveBtn.Size = new System.Drawing.Size(1110, 47);
+            this.saveBtn.Size = new System.Drawing.Size(1116, 47);
             this.saveBtn.TabIndex = 20;
             this.saveBtn.Text = "儲存所有設定";
             this.saveBtn.UseVisualStyleBackColor = true;
@@ -419,7 +432,7 @@ namespace PokemonGo.RocketAPI.Window
             this.gMapControl1.GrayScaleMode = false;
             this.gMapControl1.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
             this.gMapControl1.LevelsKeepInMemmory = 5;
-            this.gMapControl1.Location = new System.Drawing.Point(0, 3);
+            this.gMapControl1.Location = new System.Drawing.Point(0, 39);
             this.gMapControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gMapControl1.MarkersEnabled = true;
             this.gMapControl1.MaxZoom = 10;
@@ -433,7 +446,7 @@ namespace PokemonGo.RocketAPI.Window
             this.gMapControl1.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
             this.gMapControl1.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
             this.gMapControl1.ShowTileGridLines = false;
-            this.gMapControl1.Size = new System.Drawing.Size(1107, 426);
+            this.gMapControl1.Size = new System.Drawing.Size(1113, 390);
             this.gMapControl1.TabIndex = 8;
             this.gMapControl1.Zoom = 10D;
             this.gMapControl1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.gMapControl1_MouseClick);
@@ -442,7 +455,7 @@ namespace PokemonGo.RocketAPI.Window
             // 
             this.SetStart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.SetStart.Enabled = false;
-            this.SetStart.Location = new System.Drawing.Point(835, 395);
+            this.SetStart.Location = new System.Drawing.Point(841, 395);
             this.SetStart.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.SetStart.Name = "SetStart";
             this.SetStart.Size = new System.Drawing.Size(85, 30);
@@ -457,11 +470,11 @@ namespace PokemonGo.RocketAPI.Window
             this.AdressBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.AdressBox.ForeColor = System.Drawing.Color.Gray;
-            this.AdressBox.Location = new System.Drawing.Point(6, 396);
+            this.AdressBox.Location = new System.Drawing.Point(6, 402);
             this.AdressBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.AdressBox.Multiline = true;
             this.AdressBox.Name = "AdressBox";
-            this.AdressBox.Size = new System.Drawing.Size(823, 23);
+            this.AdressBox.Size = new System.Drawing.Size(829, 23);
             this.AdressBox.TabIndex = 25;
             this.AdressBox.Text = "輸入一個地址或一個地點";
             this.AdressBox.Enter += new System.EventHandler(this.AdressBox_Enter);
@@ -472,7 +485,7 @@ namespace PokemonGo.RocketAPI.Window
             this.trackBar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.trackBar.BackColor = System.Drawing.SystemColors.Info;
             this.trackBar.LargeChange = 3;
-            this.trackBar.Location = new System.Drawing.Point(1057, 7);
+            this.trackBar.Location = new System.Drawing.Point(1063, 46);
             this.trackBar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.trackBar.Maximum = 20;
             this.trackBar.Name = "trackBar";
@@ -565,12 +578,13 @@ namespace PokemonGo.RocketAPI.Window
             // 
             // UseLastGPS
             // 
+            this.UseLastGPS.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.UseLastGPS.AutoSize = true;
             this.UseLastGPS.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UseLastGPS.Location = new System.Drawing.Point(332, 5);
+            this.UseLastGPS.Location = new System.Drawing.Point(908, 8);
             this.UseLastGPS.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.UseLastGPS.Name = "UseLastGPS";
-            this.UseLastGPS.Size = new System.Drawing.Size(207, 20);
+            this.UseLastGPS.Size = new System.Drawing.Size(205, 20);
             this.UseLastGPS.TabIndex = 26;
             this.UseLastGPS.Text = "使用機器人最後的位置當預設座標";
             this.toolTip1.SetToolTip(this.UseLastGPS, "每移動一次，就更新一次預設座標");
@@ -582,7 +596,7 @@ namespace PokemonGo.RocketAPI.Window
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1118, 457);
+            this.panel2.Size = new System.Drawing.Size(1124, 457);
             this.panel2.TabIndex = 27;
             // 
             // tabControl
@@ -598,7 +612,7 @@ namespace PokemonGo.RocketAPI.Window
             this.tabControl.Location = new System.Drawing.Point(0, 0);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(1118, 457);
+            this.tabControl.Size = new System.Drawing.Size(1124, 457);
             this.tabControl.TabIndex = 26;
             // 
             // tabAccount
@@ -607,12 +621,13 @@ namespace PokemonGo.RocketAPI.Window
             this.tabAccount.Controls.Add(this.flowLayoutPanel1);
             this.tabAccount.Location = new System.Drawing.Point(4, 24);
             this.tabAccount.Name = "tabAccount";
-            this.tabAccount.Size = new System.Drawing.Size(1110, 429);
+            this.tabAccount.Size = new System.Drawing.Size(1116, 429);
             this.tabAccount.TabIndex = 4;
             this.tabAccount.Text = "基本設定";
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.Controls.Add(this.groupBox5);
             this.flowLayoutPanel1.Controls.Add(this.groupBox7);
             this.flowLayoutPanel1.Controls.Add(this.groupBox6);
@@ -620,7 +635,7 @@ namespace PokemonGo.RocketAPI.Window
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1110, 429);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1116, 429);
             this.flowLayoutPanel1.TabIndex = 26;
             // 
             // groupBox5
@@ -1244,21 +1259,18 @@ namespace PokemonGo.RocketAPI.Window
             // tabLocation
             // 
             this.tabLocation.BackColor = System.Drawing.SystemColors.Control;
+            this.tabLocation.Controls.Add(this.tableLayoutPanel1);
             this.tabLocation.Controls.Add(this.trackBar);
             this.tabLocation.Controls.Add(this.AdressBox);
-            this.tabLocation.Controls.Add(this.latitudeText);
             this.tabLocation.Controls.Add(this.DeleteLocation);
-            this.tabLocation.Controls.Add(this.UseLastGPS);
             this.tabLocation.Controls.Add(this.AddLocation);
             this.tabLocation.Controls.Add(this.SetStart);
-            this.tabLocation.Controls.Add(this.latLabel);
-            this.tabLocation.Controls.Add(this.longitudeText);
             this.tabLocation.Controls.Add(this.gMapControl1);
             this.tabLocation.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabLocation.Location = new System.Drawing.Point(4, 24);
             this.tabLocation.Name = "tabLocation";
             this.tabLocation.Padding = new System.Windows.Forms.Padding(3);
-            this.tabLocation.Size = new System.Drawing.Size(1110, 429);
+            this.tabLocation.Size = new System.Drawing.Size(1116, 429);
             this.tabLocation.TabIndex = 0;
             this.tabLocation.Text = "預設座標";
             // 
@@ -1266,7 +1278,7 @@ namespace PokemonGo.RocketAPI.Window
             // 
             this.DeleteLocation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.DeleteLocation.Enabled = false;
-            this.DeleteLocation.Location = new System.Drawing.Point(1017, 395);
+            this.DeleteLocation.Location = new System.Drawing.Point(1023, 395);
             this.DeleteLocation.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.DeleteLocation.Name = "DeleteLocation";
             this.DeleteLocation.Size = new System.Drawing.Size(85, 30);
@@ -1280,7 +1292,7 @@ namespace PokemonGo.RocketAPI.Window
             // 
             this.AddLocation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.AddLocation.Enabled = false;
-            this.AddLocation.Location = new System.Drawing.Point(926, 395);
+            this.AddLocation.Location = new System.Drawing.Point(932, 395);
             this.AddLocation.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.AddLocation.Name = "AddLocation";
             this.AddLocation.Size = new System.Drawing.Size(85, 30);
@@ -1293,26 +1305,25 @@ namespace PokemonGo.RocketAPI.Window
             // tabPokemon
             // 
             this.tabPokemon.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPokemon.Controls.Add(this.groupBox3);
-            this.tabPokemon.Controls.Add(this.groupBox2);
-            this.tabPokemon.Controls.Add(this.groupBox1);
+            this.tabPokemon.Controls.Add(this.tableLayoutPanel2);
             this.tabPokemon.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPokemon.Location = new System.Drawing.Point(4, 24);
             this.tabPokemon.Name = "tabPokemon";
             this.tabPokemon.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPokemon.Size = new System.Drawing.Size(1110, 429);
+            this.tabPokemon.Size = new System.Drawing.Size(1116, 429);
             this.tabPokemon.TabIndex = 1;
             this.tabPokemon.Text = "神奇寶貝";
             // 
             // groupBox3
             // 
-            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.Controls.Add(this.clbEvolve);
             this.groupBox3.Controls.Add(this.cbSelectAllEvolve);
-            this.groupBox3.Location = new System.Drawing.Point(394, 6);
+            this.groupBox3.Location = new System.Drawing.Point(741, 3);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(188, 413);
+            this.groupBox3.Size = new System.Drawing.Size(366, 417);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "不進化的神奇寶貝";
@@ -1327,7 +1338,7 @@ namespace PokemonGo.RocketAPI.Window
             this.clbEvolve.FormattingEnabled = true;
             this.clbEvolve.Location = new System.Drawing.Point(0, 41);
             this.clbEvolve.Name = "clbEvolve";
-            this.clbEvolve.Size = new System.Drawing.Size(188, 328);
+            this.clbEvolve.Size = new System.Drawing.Size(366, 364);
             this.clbEvolve.TabIndex = 0;
             // 
             // cbSelectAllEvolve
@@ -1342,13 +1353,14 @@ namespace PokemonGo.RocketAPI.Window
             // 
             // groupBox2
             // 
-            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.clbCatch);
             this.groupBox2.Controls.Add(this.cbSelectAllCatch);
-            this.groupBox2.Location = new System.Drawing.Point(6, 6);
+            this.groupBox2.Location = new System.Drawing.Point(3, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(188, 413);
+            this.groupBox2.Size = new System.Drawing.Size(363, 417);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "不蒐集的神奇寶貝";
@@ -1363,7 +1375,7 @@ namespace PokemonGo.RocketAPI.Window
             this.clbCatch.FormattingEnabled = true;
             this.clbCatch.Location = new System.Drawing.Point(0, 41);
             this.clbCatch.Name = "clbCatch";
-            this.clbCatch.Size = new System.Drawing.Size(188, 328);
+            this.clbCatch.Size = new System.Drawing.Size(363, 364);
             this.clbCatch.TabIndex = 0;
             // 
             // cbSelectAllCatch
@@ -1378,13 +1390,14 @@ namespace PokemonGo.RocketAPI.Window
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.clbTransfer);
             this.groupBox1.Controls.Add(this.cbSelectAllTransfer);
-            this.groupBox1.Location = new System.Drawing.Point(200, 6);
+            this.groupBox1.Location = new System.Drawing.Point(372, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(188, 413);
+            this.groupBox1.Size = new System.Drawing.Size(363, 417);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "不傳送的神奇寶貝";
@@ -1399,7 +1412,7 @@ namespace PokemonGo.RocketAPI.Window
             this.clbTransfer.FormattingEnabled = true;
             this.clbTransfer.Location = new System.Drawing.Point(0, 41);
             this.clbTransfer.Name = "clbTransfer";
-            this.clbTransfer.Size = new System.Drawing.Size(188, 328);
+            this.clbTransfer.Size = new System.Drawing.Size(363, 364);
             this.clbTransfer.TabIndex = 0;
             // 
             // cbSelectAllTransfer
@@ -1420,7 +1433,7 @@ namespace PokemonGo.RocketAPI.Window
             this.tabItems.Location = new System.Drawing.Point(4, 24);
             this.tabItems.Name = "tabItems";
             this.tabItems.Padding = new System.Windows.Forms.Padding(3);
-            this.tabItems.Size = new System.Drawing.Size(1110, 429);
+            this.tabItems.Size = new System.Drawing.Size(1116, 429);
             this.tabItems.TabIndex = 2;
             this.tabItems.Text = "保留物品";
             // 
@@ -1430,7 +1443,7 @@ namespace PokemonGo.RocketAPI.Window
             this.flpItems.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flpItems.Location = new System.Drawing.Point(3, 3);
             this.flpItems.Name = "flpItems";
-            this.flpItems.Size = new System.Drawing.Size(1104, 423);
+            this.flpItems.Size = new System.Drawing.Size(1110, 423);
             this.flpItems.TabIndex = 0;
             // 
             // tabDevice
@@ -1439,7 +1452,7 @@ namespace PokemonGo.RocketAPI.Window
             this.tabDevice.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabDevice.Location = new System.Drawing.Point(4, 24);
             this.tabDevice.Name = "tabDevice";
-            this.tabDevice.Size = new System.Drawing.Size(1110, 429);
+            this.tabDevice.Size = new System.Drawing.Size(1116, 429);
             this.tabDevice.TabIndex = 0;
             this.tabDevice.Text = "模擬裝置";
             // 
@@ -1457,12 +1470,13 @@ namespace PokemonGo.RocketAPI.Window
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.panel1);
-            this.splitContainer2.Size = new System.Drawing.Size(1110, 429);
-            this.splitContainer2.SplitterDistance = 921;
+            this.splitContainer2.Size = new System.Drawing.Size(1116, 429);
+            this.splitContainer2.SplitterDistance = 927;
             this.splitContainer2.TabIndex = 72;
             // 
             // panel3
             // 
+            this.panel3.AutoScroll = true;
             this.panel3.Controls.Add(this.DeviceModelIdentifierTb);
             this.panel3.Controls.Add(this.deviceTypeCb);
             this.panel3.Controls.Add(this.label18);
@@ -1495,28 +1509,32 @@ namespace PokemonGo.RocketAPI.Window
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(921, 429);
+            this.panel3.Size = new System.Drawing.Size(927, 429);
             this.panel3.TabIndex = 73;
             // 
             // DeviceModelIdentifierTb
             // 
+            this.DeviceModelIdentifierTb.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.DeviceModelIdentifierTb.Font = new System.Drawing.Font("Kristen ITC", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeviceModelIdentifierTb.Location = new System.Drawing.Point(167, 188);
+            this.DeviceModelIdentifierTb.Location = new System.Drawing.Point(183, 188);
             this.DeviceModelIdentifierTb.Name = "DeviceModelIdentifierTb";
-            this.DeviceModelIdentifierTb.Size = new System.Drawing.Size(480, 24);
+            this.DeviceModelIdentifierTb.Size = new System.Drawing.Size(728, 24);
             this.DeviceModelIdentifierTb.TabIndex = 53;
             // 
             // deviceTypeCb
             // 
+            this.deviceTypeCb.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.deviceTypeCb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.deviceTypeCb.Font = new System.Drawing.Font("Ravie", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.deviceTypeCb.FormattingEnabled = true;
             this.deviceTypeCb.Items.AddRange(new object[] {
             "Apple",
             "Android"});
-            this.deviceTypeCb.Location = new System.Drawing.Point(167, 12);
+            this.deviceTypeCb.Location = new System.Drawing.Point(183, 12);
             this.deviceTypeCb.Name = "deviceTypeCb";
-            this.deviceTypeCb.Size = new System.Drawing.Size(480, 25);
+            this.deviceTypeCb.Size = new System.Drawing.Size(728, 25);
             this.deviceTypeCb.TabIndex = 37;
             this.deviceTypeCb.SelectionChangeCommitted += new System.EventHandler(this.deviceTypeCb_SelectedIndexChanged);
             // 
@@ -1532,8 +1550,9 @@ namespace PokemonGo.RocketAPI.Window
             // 
             // RandomIDBtn
             // 
+            this.RandomIDBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.RandomIDBtn.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RandomIDBtn.Location = new System.Drawing.Point(560, 41);
+            this.RandomIDBtn.Location = new System.Drawing.Point(824, 42);
             this.RandomIDBtn.Name = "RandomIDBtn";
             this.RandomIDBtn.Size = new System.Drawing.Size(87, 25);
             this.RandomIDBtn.TabIndex = 65;
@@ -1553,18 +1572,22 @@ namespace PokemonGo.RocketAPI.Window
             // 
             // DeviceIdTb
             // 
+            this.DeviceIdTb.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.DeviceIdTb.Font = new System.Drawing.Font("Kristen ITC", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeviceIdTb.Location = new System.Drawing.Point(167, 41);
+            this.DeviceIdTb.Location = new System.Drawing.Point(183, 41);
             this.DeviceIdTb.Name = "DeviceIdTb";
-            this.DeviceIdTb.Size = new System.Drawing.Size(387, 24);
+            this.DeviceIdTb.Size = new System.Drawing.Size(635, 24);
             this.DeviceIdTb.TabIndex = 38;
             // 
             // FirmwareFingerprintTb
             // 
+            this.FirmwareFingerprintTb.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.FirmwareFingerprintTb.Font = new System.Drawing.Font("Kristen ITC", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FirmwareFingerprintTb.Location = new System.Drawing.Point(167, 392);
+            this.FirmwareFingerprintTb.Location = new System.Drawing.Point(183, 392);
             this.FirmwareFingerprintTb.Name = "FirmwareFingerprintTb";
-            this.FirmwareFingerprintTb.Size = new System.Drawing.Size(480, 24);
+            this.FirmwareFingerprintTb.Size = new System.Drawing.Size(728, 24);
             this.FirmwareFingerprintTb.TabIndex = 62;
             // 
             // BoardName
@@ -1589,18 +1612,22 @@ namespace PokemonGo.RocketAPI.Window
             // 
             // AndroidBoardNameTb
             // 
+            this.AndroidBoardNameTb.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.AndroidBoardNameTb.Font = new System.Drawing.Font("Kristen ITC", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AndroidBoardNameTb.Location = new System.Drawing.Point(167, 71);
+            this.AndroidBoardNameTb.Location = new System.Drawing.Point(183, 71);
             this.AndroidBoardNameTb.Name = "AndroidBoardNameTb";
-            this.AndroidBoardNameTb.Size = new System.Drawing.Size(480, 24);
+            this.AndroidBoardNameTb.Size = new System.Drawing.Size(728, 24);
             this.AndroidBoardNameTb.TabIndex = 61;
             // 
             // FirmwareTypeTb
             // 
+            this.FirmwareTypeTb.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.FirmwareTypeTb.Font = new System.Drawing.Font("Kristen ITC", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FirmwareTypeTb.Location = new System.Drawing.Point(167, 363);
+            this.FirmwareTypeTb.Location = new System.Drawing.Point(183, 363);
             this.FirmwareTypeTb.Name = "FirmwareTypeTb";
-            this.FirmwareTypeTb.Size = new System.Drawing.Size(480, 24);
+            this.FirmwareTypeTb.Size = new System.Drawing.Size(728, 24);
             this.FirmwareTypeTb.TabIndex = 58;
             // 
             // label17
@@ -1625,18 +1652,22 @@ namespace PokemonGo.RocketAPI.Window
             // 
             // AndroidBootloaderTb
             // 
+            this.AndroidBootloaderTb.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.AndroidBootloaderTb.Font = new System.Drawing.Font("Kristen ITC", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AndroidBootloaderTb.Location = new System.Drawing.Point(167, 100);
+            this.AndroidBootloaderTb.Location = new System.Drawing.Point(183, 100);
             this.AndroidBootloaderTb.Name = "AndroidBootloaderTb";
-            this.AndroidBootloaderTb.Size = new System.Drawing.Size(480, 24);
+            this.AndroidBootloaderTb.Size = new System.Drawing.Size(728, 24);
             this.AndroidBootloaderTb.TabIndex = 59;
             // 
             // FirmwareTagsTb
             // 
+            this.FirmwareTagsTb.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.FirmwareTagsTb.Font = new System.Drawing.Font("Kristen ITC", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FirmwareTagsTb.Location = new System.Drawing.Point(167, 334);
+            this.FirmwareTagsTb.Location = new System.Drawing.Point(183, 334);
             this.FirmwareTagsTb.Name = "FirmwareTagsTb";
-            this.FirmwareTagsTb.Size = new System.Drawing.Size(480, 24);
+            this.FirmwareTagsTb.Size = new System.Drawing.Size(728, 24);
             this.FirmwareTagsTb.TabIndex = 54;
             // 
             // label16
@@ -1661,18 +1692,22 @@ namespace PokemonGo.RocketAPI.Window
             // 
             // DeviceBrandTb
             // 
+            this.DeviceBrandTb.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.DeviceBrandTb.Font = new System.Drawing.Font("Kristen ITC", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeviceBrandTb.Location = new System.Drawing.Point(167, 129);
+            this.DeviceBrandTb.Location = new System.Drawing.Point(183, 129);
             this.DeviceBrandTb.Name = "DeviceBrandTb";
-            this.DeviceBrandTb.Size = new System.Drawing.Size(480, 24);
+            this.DeviceBrandTb.Size = new System.Drawing.Size(728, 24);
             this.DeviceBrandTb.TabIndex = 57;
             // 
             // FirmwareBrandTb
             // 
+            this.FirmwareBrandTb.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.FirmwareBrandTb.Font = new System.Drawing.Font("Kristen ITC", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FirmwareBrandTb.Location = new System.Drawing.Point(167, 305);
+            this.FirmwareBrandTb.Location = new System.Drawing.Point(183, 305);
             this.FirmwareBrandTb.Name = "FirmwareBrandTb";
-            this.FirmwareBrandTb.Size = new System.Drawing.Size(480, 24);
+            this.FirmwareBrandTb.Size = new System.Drawing.Size(728, 24);
             this.FirmwareBrandTb.TabIndex = 52;
             // 
             // label15
@@ -1697,18 +1732,22 @@ namespace PokemonGo.RocketAPI.Window
             // 
             // DeviceModelTb
             // 
+            this.DeviceModelTb.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.DeviceModelTb.Font = new System.Drawing.Font("Kristen ITC", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeviceModelTb.Location = new System.Drawing.Point(167, 158);
+            this.DeviceModelTb.Location = new System.Drawing.Point(183, 158);
             this.DeviceModelTb.Name = "DeviceModelTb";
-            this.DeviceModelTb.Size = new System.Drawing.Size(480, 24);
+            this.DeviceModelTb.Size = new System.Drawing.Size(728, 24);
             this.DeviceModelTb.TabIndex = 55;
             // 
             // HardwareModelTb
             // 
+            this.HardwareModelTb.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.HardwareModelTb.Font = new System.Drawing.Font("Kristen ITC", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HardwareModelTb.Location = new System.Drawing.Point(167, 275);
+            this.HardwareModelTb.Location = new System.Drawing.Point(183, 275);
             this.HardwareModelTb.Name = "HardwareModelTb";
-            this.HardwareModelTb.Size = new System.Drawing.Size(480, 24);
+            this.HardwareModelTb.Size = new System.Drawing.Size(728, 24);
             this.HardwareModelTb.TabIndex = 56;
             // 
             // label7
@@ -1733,10 +1772,12 @@ namespace PokemonGo.RocketAPI.Window
             // 
             // HardwareManufacturerTb
             // 
+            this.HardwareManufacturerTb.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.HardwareManufacturerTb.Font = new System.Drawing.Font("Kristen ITC", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HardwareManufacturerTb.Location = new System.Drawing.Point(167, 246);
+            this.HardwareManufacturerTb.Location = new System.Drawing.Point(183, 246);
             this.HardwareManufacturerTb.Name = "HardwareManufacturerTb";
-            this.HardwareManufacturerTb.Size = new System.Drawing.Size(480, 24);
+            this.HardwareManufacturerTb.Size = new System.Drawing.Size(728, 24);
             this.HardwareManufacturerTb.TabIndex = 60;
             // 
             // label8
@@ -1761,17 +1802,19 @@ namespace PokemonGo.RocketAPI.Window
             // 
             // DeviceModelBootTb
             // 
+            this.DeviceModelBootTb.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.DeviceModelBootTb.Font = new System.Drawing.Font("Kristen ITC", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeviceModelBootTb.Location = new System.Drawing.Point(167, 217);
+            this.DeviceModelBootTb.Location = new System.Drawing.Point(183, 217);
             this.DeviceModelBootTb.Name = "DeviceModelBootTb";
-            this.DeviceModelBootTb.Size = new System.Drawing.Size(480, 24);
+            this.DeviceModelBootTb.Size = new System.Drawing.Size(728, 24);
             this.DeviceModelBootTb.TabIndex = 63;
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.label20);
             this.panel1.Controls.Add(this.RandomDeviceBtn);
-            this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.label21);
             this.panel1.Controls.Add(this.label22);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1793,6 +1836,8 @@ namespace PokemonGo.RocketAPI.Window
             // 
             // RandomDeviceBtn
             // 
+            this.RandomDeviceBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.RandomDeviceBtn.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.RandomDeviceBtn.Location = new System.Drawing.Point(9, 363);
             this.RandomDeviceBtn.Name = "RandomDeviceBtn";
@@ -1801,18 +1846,6 @@ namespace PokemonGo.RocketAPI.Window
             this.RandomDeviceBtn.Text = "隨機產生一個裝置";
             this.RandomDeviceBtn.UseVisualStyleBackColor = true;
             this.RandomDeviceBtn.Click += new System.EventHandler(this.RandomDeviceBtn_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.textBox1.Location = new System.Drawing.Point(9, 188);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(157, 169);
-            this.textBox1.TabIndex = 71;
-            this.textBox1.Text = "在此只提供Android作法\r\n1.　首先在手機安裝APP：\r\nhttp://Bit.ly/GetDID\r\n2.　打開APP，長按內容可以複製\r\n3.　將複製下來" +
-    "的內容在這裡貼上即可\r\n";
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label21
             // 
@@ -1837,26 +1870,25 @@ namespace PokemonGo.RocketAPI.Window
             // tabProfile
             // 
             this.tabProfile.BackColor = System.Drawing.SystemColors.Control;
+            this.tabProfile.Controls.Add(this.tableLayoutPanel3);
             this.tabProfile.Controls.Add(this.groupBox4);
-            this.tabProfile.Controls.Add(this.button3);
-            this.tabProfile.Controls.Add(this.button2);
-            this.tabProfile.Controls.Add(this.button1);
             this.tabProfile.Location = new System.Drawing.Point(4, 24);
             this.tabProfile.Name = "tabProfile";
             this.tabProfile.Padding = new System.Windows.Forms.Padding(3);
-            this.tabProfile.Size = new System.Drawing.Size(1110, 429);
+            this.tabProfile.Size = new System.Drawing.Size(1116, 429);
             this.tabProfile.TabIndex = 3;
             this.tabProfile.Text = "設定檔";
             // 
             // groupBox4
             // 
-            this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox4.Controls.Add(this.checkBox1);
             this.groupBox4.Controls.Add(this.checkedListBox1);
             this.groupBox4.Location = new System.Drawing.Point(6, 69);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(584, 354);
+            this.groupBox4.Size = new System.Drawing.Size(1107, 354);
             this.groupBox4.TabIndex = 2;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "groupBox4";
@@ -1896,15 +1928,18 @@ namespace PokemonGo.RocketAPI.Window
             "虛擬裝置設定"});
             this.checkedListBox1.Location = new System.Drawing.Point(9, 47);
             this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(569, 274);
+            this.checkedListBox1.Size = new System.Drawing.Size(1092, 292);
             this.checkedListBox1.TabIndex = 1;
             // 
             // button3
             // 
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.button3.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(412, 6);
+            this.button3.Location = new System.Drawing.Point(739, 3);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(180, 57);
+            this.button3.Size = new System.Drawing.Size(365, 51);
             this.button3.TabIndex = 0;
             this.button3.TabStop = false;
             this.button3.Text = "原始設定檔";
@@ -1913,10 +1948,13 @@ namespace PokemonGo.RocketAPI.Window
             // 
             // button2
             // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.button2.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(208, 6);
+            this.button2.Location = new System.Drawing.Point(371, 3);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(180, 57);
+            this.button2.Size = new System.Drawing.Size(362, 51);
             this.button2.TabIndex = 0;
             this.button2.TabStop = false;
             this.button2.Text = "匯入設定檔";
@@ -1925,10 +1963,13 @@ namespace PokemonGo.RocketAPI.Window
             // 
             // button1
             // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(6, 6);
+            this.button1.Location = new System.Drawing.Point(3, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(180, 57);
+            this.button1.Size = new System.Drawing.Size(362, 51);
             this.button1.TabIndex = 0;
             this.button1.TabStop = false;
             this.button1.Text = "匯出設定檔";
@@ -1953,15 +1994,83 @@ namespace PokemonGo.RocketAPI.Window
             // 
             this.splitContainer1.Panel2.Controls.Add(this.saveBtn);
             this.splitContainer1.Panel2MinSize = 50;
-            this.splitContainer1.Size = new System.Drawing.Size(1118, 513);
+            this.splitContainer1.Size = new System.Drawing.Size(1124, 513);
             this.splitContainer1.SplitterDistance = 457;
             this.splitContainer1.TabIndex = 30;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.ColumnCount = 4;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 75F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 210F));
+            this.tableLayoutPanel1.Controls.Add(this.latLabel, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.latitudeText, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.longitudeText, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.UseLastGPS, 3, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 3);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1116, 36);
+            this.tableLayoutPanel1.TabIndex = 27;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 3;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel2.Controls.Add(this.groupBox2, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.groupBox1, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.groupBox3, 2, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1110, 423);
+            this.tableLayoutPanel2.TabIndex = 3;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox1.Location = new System.Drawing.Point(9, 188);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(157, 169);
+            this.textBox1.TabIndex = 72;
+            this.textBox1.Text = "在此只提供Android作法\n1.　首先在手機安裝APP：\nhttp://Bit.ly/GetDID\n2.　打開APP，長按內容可以複製\n3.　將複製下來的內容在" +
+    "這裡貼上即可\n";
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel3.ColumnCount = 3;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel3.Controls.Add(this.button1, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.button3, 2, 0);
+            this.tableLayoutPanel3.Controls.Add(this.button2, 1, 0);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(6, 6);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 1;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1107, 57);
+            this.tableLayoutPanel3.TabIndex = 3;
             // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1118, 513);
+            this.ClientSize = new System.Drawing.Size(1124, 513);
             this.Controls.Add(this.splitContainer1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -2029,6 +2138,10 @@ namespace PokemonGo.RocketAPI.Window
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -2107,7 +2220,6 @@ namespace PokemonGo.RocketAPI.Window
         private System.Windows.Forms.FlowLayoutPanel flpItems;
         private System.Windows.Forms.Label useIncubatorsText;
         private System.Windows.Forms.ComboBox useIncubatorsCb;
-        private System.Windows.Forms.TextBox textBox1;
         public System.Windows.Forms.ComboBox razzmodeCb;
         private System.Windows.Forms.TabPage tabProfile;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
@@ -2166,5 +2278,9 @@ namespace PokemonGo.RocketAPI.Window
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.RichTextBox textBox1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
     }
 }
